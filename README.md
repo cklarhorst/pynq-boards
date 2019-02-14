@@ -42,4 +42,15 @@ git clone https://github.com/cklarhorst/pynq-boards.git
 cd <PATH TO PYNQ>/sdbuild
 make BOARDDIR="<PATH TO pynq-boards>" BOARDS="<YOUR BOARD>"
 ```
+
+If you encounter an error like:
+```
+which vivado | fgrep 2018.2
+Makefile:307: recipe for target 'checkenv' failed
+```
+You have to execute:
+```
+source /tools/Xilinx/Vivado/2018.2/settings64.sh
+```
+
 SD card image will be placed in the `PYNQ/sdbuild/` directory.
