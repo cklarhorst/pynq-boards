@@ -18,24 +18,26 @@ You also need a Xilinx Account for the BSP.
 
 ## Quick Start
 
-Clone PYNQ: 
+1. Clone PYNQ: 
 ```
 git clone https://github.com/Xilinx/PYNQ.git
 ```
 
-Install dependencies:
+2. Install dependencies:
 ``` 
 <PYNQ repository>/sdbuild/scripts/setup_host.sh
 ```
 
-Clone this git ***outside*** the PYNQ directory: 
+3. Clone this git ***outside*** the PYNQ directory: 
 ```
 git clone https://github.com/cklarhorst/pynq-boards.git
 ```
 
-Download and copy the BSP Package into your board directory.
+4. Download and copy the BSP Package into your board directory.
 
-Build the image:
+5. Update the BSP entry in your spec file under `<PATH TO pynq-boards>/<YOUR BOARD>/<YOUR BOARD>.spec` according to your BSP version
+
+6. Build the image:
 ```
 cd <PATH TO PYNQ>/sdbuild
 make BOARDDIR="<PATH TO pynq-boards>" BOARDS="<YOUR BOARD>"
