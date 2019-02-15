@@ -3,9 +3,9 @@ Board files to build a PYNQ image
 
 ## Currently Supported Boards
 
-| Board Name  | Last Tested PYNQ Version | Link to BSP |
-| ----------- | ------------------------ | ----------- |
-| ZedBoard | Master - c2d606 | [2018.2](https://www.xilinx.com/member/forms/download/xef.html?filename=avnet-digilent-zedboard-v2018.2-final.bsp), [2018.3 (not tested yet)](https://www.xilinx.com/member/forms/download/xef.html?filename=avnet-digilent-zedboard-v2018.3-final.bsp) |
+| Board Name  | Last Tested PYNQ Version | Link to BSP | What was tested |
+| ----------- | ------------------------ | ----------- | --------------- |
+| ZedBoard | Master - c2d606 | [2018.2](https://www.xilinx.com/member/forms/download/xef.html?filename=avnet-digilent-zedboard-v2018.2-final.bsp), [2018.3 (not tested yet)](https://www.xilinx.com/member/forms/download/xef.html?filename=avnet-digilent-zedboard-v2018.3-final.bsp) | [TVM/VTA](https://github.com/dmlc/tvm), [BNN-PYNQ](https://github.com/Xilinx/BNN-PYNQ)|
 
 ## Requirements
 
