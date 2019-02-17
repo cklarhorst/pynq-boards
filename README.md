@@ -3,9 +3,9 @@ Board files to build a PYNQ image
 
 ## Currently Supported Boards
 
-| Board Name  | Last Tested PYNQ Version | Link to BSP | What was tested |
-| ----------- | ------------------------ | ----------- | --------------- |
-| ZedBoard | Master - c2d606 | [2018.2](https://www.xilinx.com/member/forms/download/xef.html?filename=avnet-digilent-zedboard-v2018.2-final.bsp), [2018.3 (not tested yet)](https://www.xilinx.com/member/forms/download/xef.html?filename=avnet-digilent-zedboard-v2018.3-final.bsp) | [TVM/VTA](https://github.com/dmlc/tvm), [BNN-PYNQ](https://github.com/Xilinx/BNN-PYNQ), [QNN-MO-PYNQ](https://github.com/Xilinx/QNN-MO-PYNQ)|
+Board Name  | Last Tested <br/> PYNQ Version | Link to BSP | What was tested
+----------- | ------------------------ | ----------- | ---------------
+ZedBoard    | Master - c2d606          | [2018.2](https://www.xilinx.com/member/forms/download/xef.html?filename=avnet-digilent-zedboard-v2018.2-final.bsp), [2018.3 (not tested yet)](https://www.xilinx.com/member/forms/download/xef.html?filename=avnet-digilent-zedboard-v2018.3-final.bsp) | [TVM/VTA](https://github.com/dmlc/tvm), [BNN-PYNQ](https://github.com/Xilinx/BNN-PYNQ), [QNN-MO-PYNQ](https://github.com/Xilinx/QNN-MO-PYNQ)
 
 ## Requirements
 
@@ -43,14 +43,27 @@ cd <PATH TO PYNQ>/sdbuild
 make BOARDDIR="<PATH TO pynq-boards>" BOARDS="<YOUR BOARD>"
 ```
 
-If you encounter an error like:
+SD card image will be placed in the `PYNQ/sdbuild/` directory.
+
+## FAQ
+
+### Build errors
+
 ```
 which vivado | fgrep 2018.2
 Makefile:307: recipe for target 'checkenv' failed
 ```
-You have to execute:
+***Solution***
 ```
 source /tools/Xilinx/Vivado/2018.2/settings64.sh
 ```
 
-SD card image will be placed in the `PYNQ/sdbuild/` directory.
+### Runtime errors
+
+Most software only runs on specific boards, to run or install you can override your board environment variable (use a board with the same fpga/package), use at your own risk:
+```
+export BOARD="Pynq-Z1"
+```
+
+## Note
+It's a good idea to use qemu and build additional software (like tvm) on your host pc.
